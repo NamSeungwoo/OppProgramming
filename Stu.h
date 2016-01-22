@@ -1,26 +1,16 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
-class Stu {
-	int hp;
-	int iq;
-	static int last_num;
-	string name;
+class Stu
+{
 	const int num;
-	int scnt;
-	int stress;
+	string name;
 public:
-	Stu(string _name);
-	~Stu();
-	void Dance();
-	void Drink();
-	string GetName() const;
-	int GetNum() const;
-	void ListenLecture();
-	void Relax();
-	void Sleep();
-	void Study();
-	void View() const;
+	Stu(int _num, string _name);
+	operator int();
+	
 };
-asdfasdf
+
+

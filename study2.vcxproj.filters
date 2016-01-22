@@ -18,12 +18,9 @@
     <ClCompile Include="Program.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Stu.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stu.h">
+    <ClInclude Include="Arr.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

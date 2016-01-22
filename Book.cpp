@@ -1,16 +1,16 @@
 #include "Book.h"
-Book::Book(string _title)
+
+Book::Book(string _name)
 {
-	title = _title;
-	memo = "";
+	name = _name;
 }
 
-void Book::SetMemo(string _memo)
+Book::~Book(void)
 {
-	memo = _memo;
+
 }
 
-void Book::View()
+void Book::View() const
 {
-	cout << "제목:" << title << " 메모:" << memo << endl;
+	cout << "도서명:" << name << endl;
 }

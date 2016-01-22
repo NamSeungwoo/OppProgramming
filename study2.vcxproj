@@ -20,10 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="Stu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stu.h" />
+    <ClInclude Include="Arr.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{44A5DDFA-A159-421A-BAF8-D2626234823E}</ProjectGuid>

@@ -5,10 +5,9 @@ using namespace std;
 
 class Book
 {
-	string title;
-	string memo;
+	string name;
 public:
-	Book(string _title);
-	void SetMemo(string _memo);
-	void View();
+	Book(string _name);
+	~Book(void);
+	void View() const;
 };

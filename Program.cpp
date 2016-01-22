@@ -1,18 +1,8 @@
-#include "Stu.h"
+#include "EHLand.h"
+#include <iostream>
+using namespace std;
 
-int main()
+void main()
 {
-	Stu *p = new Stu("Nam");
-	Stu *p2 = new Stu("Kim");
-
-	p->Dance();
-	p->View();
-
-	p2->Study();
-	p2->Study();
-	p2->View();
-
-	delete p;
-	
-
+	EHLand::Start();
 }
