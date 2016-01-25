@@ -2,23 +2,26 @@
 
 Artist::Artist(int seq, string name) :Unit(seq, name)
 {
-	throw "Artist::Artist을 구현하지 않았음";
+	
 }
 Artist::~Artist()
 {
-	throw "Artist::~Artist을 구현하지 않았음";
+	
 }
 void Artist::Criticism()
 {
-	throw "Artist::Criticism을 구현하지 않았음";
+	cout << this << endl;
+	cout << "이번 공연은 이렇고 저렇고....." << endl;
 }
 
 void Artist::Sleep()
 {
-	throw "Magician::Sleep을 구현하지 않았음";
+	View();
+	cout << "노래는 즐겁다...." << endl;
 }
 
 void Artist::Relax()
 {
-	throw "Artist::Relax를 구현하지 않았음";
+	View();
+	cout << "비발디의 사계 .... " << endl;
 }

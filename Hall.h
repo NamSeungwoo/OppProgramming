@@ -8,4 +8,7 @@ public:
 	void SetFocus();
 	void View(ostream &os) const;
 	Hall(ComeBackUnitEvent *cbu_eventhandler);
+	MyGlobal::KeyData SelectMenu();
+	void ViewConcert();
+	void GoOnStage();
 };

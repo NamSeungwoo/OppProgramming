@@ -6,6 +6,7 @@ private:
 	friend class UnitFactory;
 	Artist(int seq, string name);
 	~Artist();
+public:
 	void Criticism();
 	void Sleep();
 	void Relax();

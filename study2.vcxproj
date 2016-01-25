@@ -19,10 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Artist.cpp" />
+    <ClCompile Include="EHLand.cpp" />
+    <ClCompile Include="Hall.cpp" />
+    <ClCompile Include="Magician.cpp" />
+    <ClCompile Include="MyGlobal.cpp" />
+    <ClCompile Include="Place.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitFactory.cpp" />
+    <ClCompile Include="Village.cpp" />
+    <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arr.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Artist.h" />
+    <ClInclude Include="EHLand.h" />
+    <ClInclude Include="Hall.h" />
+    <ClInclude Include="IPlay.h" />
+    <ClInclude Include="IRelax.h" />
+    <ClInclude Include="Magician.h" />
+    <ClInclude Include="MyGlobal.h" />
+    <ClInclude Include="Place.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitFactory.h" />
+    <ClInclude Include="Village.h" />
+    <ClInclude Include="Worker.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{44A5DDFA-A159-421A-BAF8-D2626234823E}</ProjectGuid>

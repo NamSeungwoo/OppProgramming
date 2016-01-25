@@ -5,6 +5,7 @@ class Arr
 	T *base;
 	const int bsize;
 public:
+	
 	Arr(int _bsize) :bsize(_bsize)
 	{
 		base = new T[bsize];

@@ -2,24 +2,27 @@
 
 Worker::Worker(int seq, string name) :Unit(seq, name)
 {
-	throw "Worker::Worker을 구현하지 않았음";
+	
 }
 Worker::~Worker()
 {
-	throw "Worker::~Worker을 구현하지 않았음";
+	
 }
 
 void Worker::Sleep()
 {
-	throw "Worker::Sleep을 구현하지 않았음";
+	View();
+	cout << "열심히 일한 당신, 드르렁~ 드르렁~";
 }
 
 void Worker::SetAlarm()
 {
-	throw "Worker::SetAlarm을 구현하지 않았음";
+	View();
+	cout << "내일 아침을 위해 알람설정" << endl;
 }
 
 void Worker::Relax()
 {
-	throw "Worker::Relax를 구현하지 않았음";
+	View();
+	cout << "몸이 피곤해..... 드르렁~ 드르렁~";
 }

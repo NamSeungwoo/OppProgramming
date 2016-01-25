@@ -6,6 +6,7 @@ private:
 	friend class UnitFactory;
 	Magician(int seq, string name);
 	~Magician();
+public:
 	void ViewConcert();
 	void Sleep();
 	void Relax();

@@ -14,6 +14,7 @@ class EHLand
 	ComeBackHelper *comebackhelper;
 	Place *places[2];
 	Arr<Unit*> *units;
+	
 public:
 	void ReplaceUnit(Unit *unit);
 	static void Start();
@@ -23,6 +24,11 @@ private:
 	void MoveFocus();
 	void MoveUnit();
 	void ViewState();
+	Place *SelectPlace();
+	Unit *SelectUnit();
+	void Remove(Unit *unit);
+	void ViewUnits();
+	Unit *FindUnit(int useq);
 
 	EHLand();
 	~EHLand();
@@ -40,6 +46,6 @@ public:
 	}
 	void operator() (Unit *unit)
 	{
-		throw "ComeBackHelper::operator()를 구현하지 않았음";
+		owner->ReplaceUnit(unit);
 	}
 };

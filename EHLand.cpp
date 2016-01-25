@@ -2,13 +2,20 @@
 
 void EHLand::ReplaceUnit(Unit *unit)
 {
-	throw "EHLand::ReplaceUnit을 구현하지 않았음";
+	for (int i = 0; i < 10; i++)
+	{
+		if ((*units)[i] == 0)
+		{
+			(*units)[i] = unit;
+			break;
+		}
+	}
 }
 
 void EHLand::Start()
 {
 	EHLand *singleton = new EHLand();
-	singleton->Run();
+	singleton->Run(); 
 	delete singleton;
 }
 
@@ -17,7 +24,7 @@ EHLand::EHLand()
 	Init();
 }
 
-EHLand::EHLand()
+EHLand::~EHLand()
 {
 	Exit();
 }
@@ -29,11 +36,6 @@ void EHLand::Init()
 	places[0] = new Hall(comebackhelper);
 	places[1] = new Village(comebackhelper);
 	units = new Arr<Unit *>(10);
-}
-
-void EHLand::Run()
-{
-	throw "EHLand::Run을 구현하지 않았음";
 }
 
 void EHLand::Exit()
@@ -74,21 +76,122 @@ MyGlobal::KeyData EHLand::SelectMenu()
 
 void EHLand::MakeUnit()
 {
-	throw "EHLand::MakeUnit을 구현하지 않았음";
+	int utype = 0;
+	cout << "생성할 유닛 종류를 입력하세요. [1]:마법사 [2]:예술가 [3]:회사원" << endl;
+	utype = MyGlobal::GetNum();
+	if ((utype >= 1) && (utype <= 3))
+	{
+		cout << "생성할 유닛의 이름을 입력하세요." << endl;
+		string name = MyGlobal::GetStr();
+		Unit *unit = unitfactory->MakeUnit(utype, name);
+		ReplaceUnit(unit);
+	}
+	else
+	{
+		cout << "잘못 입력하셨습니다." << endl;
+	}
 }
 
 void EHLand::MoveFocus()
 {
-	throw "EHLand::MoveFocus를 구현하지 않았음";
+	cout << "초점 이동 메뉴입니다." << endl;
+	Place *place = SelectPlace();
+	if (place)
+	{
+		place->SetFocus();
+	}
+	else
+	{
+		cout << "잘못 입력하셨습니다." << endl;
+	}
 }
 
+Place *EHLand::SelectPlace()
+{
+	int pnum = 0;
+	cout << "장소를 선택하세요. [1]:공연장 [2]:주거지" << endl;
+	pnum = MyGlobal::GetNum();
+	if ((pnum >= 1) && (pnum <= 2))
+	{
+		return places[pnum - 1];
+	}
+	return 0;
+}
 void EHLand::MoveUnit()
 {
-	throw "EHLand::MoveUnit을 구현하지 않았음";
+	cout << "이동할 유닛을 선택해주세요" << endl;
+	Unit *unit = SelectUnit();
+	if (unit != 0)
+	{
+		cout << "이동할 장소를 선택해주세요" << endl;
+		Place *place = SelectPlace();
+		if (place != 0)
+		{
+			place->InsertUnit(unit);
+			Remove(unit);
+		}
+		else
+		{
+			cout << "장소를 잘못 선택하였습니다." << endl;
+		}
+	}
+	else
+	{
+		cout << "유닛을 잘못 선택하였습니다." << endl;
+	}
+}
+
+Unit *EHLand::SelectUnit()
+{
+	ViewUnits();
+	cout << "유닛의 일련번호를 입력해주세요" << endl;
+	int useq = MyGlobal::GetNum();
+	return FindUnit(useq);
+}
+
+void EHLand::ViewUnits()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		if ((*units)[i])
+		{
+			Unit *unit = (*units)[i];
+			cout << unit << endl;
+		}
+	}
+}
+
+Unit *EHLand::FindUnit(int useq)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		if ((*units)[i])
+		{
+			Unit *unit = (*units)[i];
+			if (unit->GetSeq() == useq)
+			{
+				return unit;
+			}
+		}
+	}
+	return 0;
+}
+
+void EHLand::Remove(Unit *unit)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		if ((*units)[i] == unit)
+		{
+			(*units)[i] = 0;
+			return;
+		}
+	}
 }
 
 void EHLand::ViewState()
 {
-	throw "EHLand::ViewState를 구현하지 않았음";
+	ViewUnits();
+	cout << places[0] << endl;
+	cout << places[1] << endl;
 }
-

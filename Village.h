@@ -5,6 +5,10 @@
 
 class Village : public Place
 {
+private:
+	MyGlobal::KeyData SelectMenu();
+	void TurnOff();
+	void Relax();
 public:
 	void SetFocus();
 	Village(ComeBackUnitEvent *cbu_eventhandler);
